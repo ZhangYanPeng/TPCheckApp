@@ -1,0 +1,32 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<div data-page="tpcheck" class="page navbar-fixed toolbar-fixed">
+    <!-- Top Navbar-->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="back link">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="center">支吊架</div>
+            <div class="right">
+                <a href="javascript:scanStart();" ><i class="fa fa-qrcode" aria-hidden="true"></i>扫一扫</a>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="content-block">
+            <div class="row no-gutter" >
+            <div class="col-50"><a href="javascript:startCheck(2);" class="link start-tpcheck"><i class="fa fa-search fa-4x color-red"></i><br>开始按计划检查</a></div>
+                <div class="col-50"><a href="javascript:uploadAll();" ><i class="fa fa-upload fa-4x color-orange"></i><br>同步数据</a></div>
+            </div>
+            <div class="row no-gutter">
+                <div class="col-50"><a href="setting.html" ><i class="fa fa-cogs fa-4x color-green"></i><br>设置</a></div>
+                <div class="col-50"><a href="#" ><i class="fa fa-info-circle fa-4x color-blue"></i><br>关于</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+

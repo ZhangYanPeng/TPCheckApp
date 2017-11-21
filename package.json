@@ -1,0 +1,29 @@
+{
+  "name": "com.tpcheck.tpri",
+  "version": "1.0.0",
+  "displayName": "TPCheckApp",
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-console": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-camera": {}
+    }
+  },
+  "dependencies": {
+    "cordova-android": "~6.3.0",
+    "cordova-plugin-whitelist": "~1.2.0",
+    "cordova-plugin-console": "~1.0.1",
+    "cordova-plugin-statusbar": "~1.0.1",
+    "cordova-plugin-file": "~5.0.0",
+    "cordova-plugin-file-transfer": "~1.7.0",
+    "cordova-plugin-camera": "~3.0.0",
+    "cordova-ios": "~4.5.4"
+  }
+}
