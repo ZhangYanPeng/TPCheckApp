@@ -1,0 +1,51 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<div data-page="record" class="page navbar-fixed toolbar-fixed">
+    <!-- Top Navbar-->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="back link">
+                    <i class="icon icon-back"></i>
+                    <span>返回</span>
+                </a>
+            </div>
+            <div class="center">检查记录</div>
+            <div class="right">
+                <a href="javascript:saveRecord();" >提交</a>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="content-block-title">
+            检查项
+        </div>
+        <div class="content-block">
+            <div class="list-block">
+                <ul class="check-item">
+
+                </ul>
+            </div>
+            <input type="text" name="dev-id" id="dev-id" hidden="hidden"/>
+
+            <div class="list-block">
+                <ul>
+                    <li class="align-top">
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">备注</div>
+                                <div class="item-input">
+                                    <textarea id="record"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <p><a href="javascript:takephoto();" class="button button-round">拍摄照片</a></p>
+            <div id = "images">
+            </div>
+        </div>
+    </div>
+</div>
+

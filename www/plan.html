@@ -1,0 +1,51 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<div data-page="plan" class="page navbar-fixed toolbar-fixed">
+    <!-- Top Navbar-->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="check.html" class="back">
+                    <span>结束检查</span>
+                </a>
+            </div>
+            <div class="center">检查计划</div>
+            <div class="right">
+                <a href="javascript:scanStart();" ><i class="fa fa-qrcode" aria-hidden="true"></i>扫一扫</a>
+            </div>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="content-block">
+            <div class="content-block">
+                <!-- Buttons row as tabs controller -->
+                <div class="buttons-row">
+                    <!-- Link to 1st tab, active -->
+                    <a href="#tab1" class="tab-link active button">待检查设备</a>
+                    <!-- Link to 2nd tab -->
+                    <a href="#tab2" class="tab-link button">已检查设备</a>
+                </div>
+            </div>
+            <!-- Tabs, tabs wrapper -->
+            <div class="tabs">
+                <!-- Tab 1, active by default -->
+                <div id="tab1" class="tab active">
+                    <div class="content-block">
+                        <div class="list-block accordion-list uncomplete">
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab 2 -->
+                <div id="tab2" class="tab">
+                    <div class="content-block ">
+                        <div class="list-block accordion-list complete">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
