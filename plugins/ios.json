@@ -13,18 +13,22 @@
     "cordova-plugin-console": {
       "PACKAGE_NAME": "com.tpcheck.tpri"
     },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.tpcheck.tpri"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "com.tpcheck.tpri"
-    },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.tpcheck.tpri"
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.tpcheck.tpri"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.tpcheck.tpri"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.tpcheck.tpri"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.tpcheck.tpri"
+    }
+  }
 }

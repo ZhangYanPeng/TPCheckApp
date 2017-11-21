@@ -49,6 +49,14 @@ module.exports = [
     ]
   },
   {
+    "id": "cordova-plugin-statusbar.statusbar",
+    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+    "pluginId": "cordova-plugin-statusbar",
+    "clobbers": [
+      "window.StatusBar"
+    ]
+  },
+  {
     "id": "cordova-plugin-file.DirectoryEntry",
     "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
     "pluginId": "cordova-plugin-file",
@@ -236,14 +244,6 @@ module.exports = [
     "clobbers": [
       "window.FileTransfer"
     ]
-  },
-  {
-    "id": "cordova-plugin-statusbar.statusbar",
-    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-    "pluginId": "cordova-plugin-statusbar",
-    "clobbers": [
-      "window.StatusBar"
-    ]
   }
 ];
 module.exports.metadata = 
@@ -251,10 +251,11 @@ module.exports.metadata =
 {
   "cordova-plugin-camera": "3.0.0",
   "cordova-plugin-console": "1.0.7",
-  "cordova-plugin-file": "5.0.0",
-  "cordova-plugin-file-transfer": "1.7.0",
   "cordova-plugin-statusbar": "1.0.1",
-  "cordova-plugin-whitelist": "1.2.2"
+  "cordova-plugin-whitelist": "1.2.2",
+  "cordova-plugin-compat": "1.2.0",
+  "cordova-plugin-file": "4.3.3",
+  "cordova-plugin-file-transfer": "1.6.3"
 };
 // BOTTOM OF METADATA
 });
