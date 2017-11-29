@@ -81,29 +81,45 @@ function presentPlan(){
 
 
 function scanStart () {
-	cordova.plugins.barcodeScanner.scan(function (result) {
-		var il = result.text.split(';');
-		var sid = il[0].split(':')[1];
-		completeCheck(sid);
-		presentPlan();
-		mainView.router.loadPage("information.html?id="+sid+"&content="+result.text);
-	}, 
-	function (error) {
-		myApp.alert(error);
-	},
-	{
-		preferFrontCamera : false, // iOS and Android
-        showFlipCameraButton : false, // iOS and Android
-        showTorchButton : true, // iOS and Android
-        torchOn: false, // Android, launch with the torch switched on (if available)
-        saveHistory: true, // Android, save scan history (default false)
-        prompt : "请将二维码置于框中", // Android
-        resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-        formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-        orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
-        disableAnimations : true, // iOS
-        disableSuccessBeep: false // iOS and Android
-    });
+	var permissions = cordova.plugins.permissions;
+	permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
+
+	function checkPermissionCallback(status) {
+		if(!status.hasPermission) {
+			var errorCallback = function() {
+				cordova.plugins.barcodeScanner.scan(function (result) {
+					var il = result.text.split(';');
+					var sid = il[0].split(':')[1];
+					completeCheck(sid);
+					presentPlan();
+					mainView.router.loadPage("information.html?id="+sid+"&content="+result.text);
+				}, 
+				function (error) {
+					myApp.alert(error);
+				},
+				{
+					preferFrontCamera : false, // iOS and Android
+			        showFlipCameraButton : false, // iOS and Android
+			        showTorchButton : true, // iOS and Android
+			        torchOn: false, // Android, launch with the torch switched on (if available)
+			        saveHistory: true, // Android, save scan history (default false)
+			        prompt : "请将二维码置于框中", // Android
+			        resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+			        formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+			        orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+			        disableAnimations : true, // iOS
+			        disableSuccessBeep: false // iOS and Android
+			    });
+			}
+
+			permissions.requestPermission(
+				permissions.CAMERA,
+				function(status) {
+					if(!status.hasPermission) errorCallback();
+				},
+				errorCallback);
+		}
+	}
 }
 
 function loadDeviceInfo(did,content){

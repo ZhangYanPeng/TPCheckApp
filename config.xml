@@ -34,4 +34,5 @@
     <plugin name="cordova-plugin-barcodescanner" source="npm" spec="0.7.1" >
         <param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes." />
     </plugin>
+    <plugin name="cordova-plugin-android-permissions" source="npm" spec="0.11.0" />
 </widget>

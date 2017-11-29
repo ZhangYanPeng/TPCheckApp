@@ -268,7 +268,8 @@ module.exports.metadata =
     "cordova-plugin-compat": "1.2.0",
     "cordova-plugin-file": "4.3.3",
     "cordova-plugin-file-transfer": "1.6.3",
-    "cordova-plugin-barcodescanner": "0.7.1"
+    "cordova-plugin-barcodescanner": "0.7.1",
+    "cordova-plugin-android-permissions": "0.11.0"
 }
 // BOTTOM OF METADATA
 });
