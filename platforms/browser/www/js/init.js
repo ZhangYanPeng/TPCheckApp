@@ -31,7 +31,7 @@ permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
 function checkPermissionCallback(status) {
 	if(!status.hasPermission) {
 		var errorCallback = function() {
-			console.warn('Camera permission is not turned on');
+			myApp.alert('Camera permission is not turned on');
 		}
 
 		permissions.requestPermission(
