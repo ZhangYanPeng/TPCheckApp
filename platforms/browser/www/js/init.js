@@ -26,23 +26,6 @@ var progress;
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
 
-var permissions = cordova.plugins.permissions;
-permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
-function checkPermissionCallback(status) {
-	if(!status.hasPermission) {
-		var errorCallback = function() {
-			myApp.alert('Camera permission is not turned on');
-		}
-
-		permissions.requestPermission(
-			permissions.CAMERA,
-			function(status) {
-				if(!status.hasPermission) errorCallback();
-			},
-			errorCallback);
-	}
-}
-
 // Add view
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
