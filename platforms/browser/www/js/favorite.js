@@ -47,7 +47,6 @@ function addFavRec(recid){
 		error : function(e,status) {
 		},
 		success : function(data) {
-			console.log(data.pictures.length);
 			var pics = new Array();
 			$$.each(data.pictures,function(index,value){
 				var fileTransfer = new FileTransfer();
@@ -78,9 +77,13 @@ function addFavRec(recid){
 			record.record = data.record;
 			record.cides = data.deviceCheckItem;
 			record.pictures = pics;
+			if(favorite == null){
+				favorite = new Array();
+			}else{
+			}
 			favorite.push(record);
 			storeRecord();
-			myApp.alert("搜藏成功","通知");
+			myApp.alert("收藏成功","通知");
 		}
 	});
 }

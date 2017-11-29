@@ -222,14 +222,11 @@ function uploadRecord(record){
 };
 
 function uploadPic(pic){
-	var us = -1;
 	window.resolveLocalFileSystemURL(pic, function (fileEntry) {  
 		var fileURL = fileEntry.toURL();
 		var success = function (r) {
-			us = 1;
 		}
 		var fail = function (error) {
-			us = 0;
 		}
 		var options = new FileUploadOptions();
 		options.fileKey = "file";
