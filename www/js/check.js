@@ -89,6 +89,7 @@ function scanStart () {
 		mainView.router.loadPage("information.html?id="+sid+"&content="+result.text);
 	}, 
 	function (error) {
+		myApp.alert(error);
 	},
 	{
 		preferFrontCamera : false, // iOS and Android
