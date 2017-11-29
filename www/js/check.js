@@ -79,10 +79,7 @@ function presentPlan(){
 	$$('.complete').html("").append(c_ul);
 }
 
-function successCB(status){
-	if( !status.hasPermission ) 
-		errorCB();
-	console.log("1111111111111");
+function scanStart () {
 	cordova.plugins.barcodeScanner.scan(
 		function (result) {
 			var il = result.text.split(';');
@@ -96,32 +93,17 @@ function successCB(status){
 		},
 		{
 			preferFrontCamera : false, // iOS and Android
-			showFlipCameraButton : false, // iOS and Android
-			showTorchButton : true, // iOS and Android
-			torchOn: false, // Android, launch with the torch switched on (if available)
-			saveHistory: true, // Android, save scan history (default false)
-			prompt : "请将二维码置于框中", // Android
-			resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-			formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-			orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
-			disableAnimations : true, // iOS
-			disableSuccessBeep: false // iOS and Android
-		}
-	);
-}
-
-function errorCB(){
-	console.log("error");
-	permissions.requestPermission(permissions.CAMERA, successCB, errorCB);
-}
-
-function scanStart () {
-	console.log("************");
-	var permissions = cordova.plugins.permissions;
-	console.log(permissions);
-	console.log(permissions.CAMERA);
-	console.log("************");
-	permissions.requestPermission(permissions.CAMERA, successCB, errorCB);
+		    showFlipCameraButton : false, // iOS and Android
+		    showTorchButton : true, // iOS and Android
+		    torchOn: false, // Android, launch with the torch switched on (if available)
+		    saveHistory: true, // Android, save scan history (default false)
+		    prompt : "请将二维码置于框中", // Android
+	        resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+	        formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+	        orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+	        disableAnimations : true, // iOS
+	        disableSuccessBeep: false // iOS and Android
+	    });
 }
 
 function loadDeviceInfo(did,content){

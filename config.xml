@@ -32,7 +32,11 @@
     <plugin name="cordova-plugin-file" source="npm" spec="4.1.1" />
     <plugin name="cordova-plugin-file-transfer" source="npm" spec="1.5.0" />
     <plugin name="cordova-plugin-barcodescanner" source="npm" spec="0.7.1">
-        <param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes." />
+        <config-file target="AndroidManifest.xml" parent="/*" mode="merge">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-feature android:name="android.hardware.camera" />
+            <uses-feature android:name="android.hardware.camera.autofocus" />
+        </config-file>
     </plugin>
     <plugin name="cordova-plugin-android-permissions" spec="~0.11.0" />
 </widget>
