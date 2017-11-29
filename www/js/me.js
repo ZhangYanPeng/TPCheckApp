@@ -37,9 +37,3 @@ function modify(){
 		}
 	});
 }
-
-function logout(){
-	account = null;
-	storeUserIdentification(account);
-	myApp.alert("密码修改成功！","提示");
-}
