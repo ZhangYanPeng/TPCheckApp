@@ -26,6 +26,23 @@ var progress;
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
 
+var permissions = cordova.plugins.permissions;
+permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
+function checkPermissionCallback(status) {
+	if(!status.hasPermission) {
+		var errorCallback = function() {
+			console.warn('Camera permission is not turned on');
+		}
+
+		permissions.requestPermission(
+			permissions.CAMERA,
+			function(status) {
+				if(!status.hasPermission) errorCallback();
+			},
+			errorCallback);
+	}
+}
+
 // Add view
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
@@ -94,19 +111,19 @@ function storeRecord(){
 }
 
 function getNowFormatDate() {
-    var date = new Date();
-    var seperator1 = "-";
-    var seperator2 = ":";
-    var month = date.getMonth() + 1;
-    var strDate = date.getDate();
-    if (month >= 1 && month <= 9) {
-        month = "0" + month;
-    }
-    if (strDate >= 0 && strDate <= 9) {
-        strDate = "0" + strDate;
-    }
-    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-            + " " + date.getHours() + seperator2 + date.getMinutes()
-            + seperator2 + date.getSeconds();
-    return currentdate;
+	    var date = new Date();
+	    var seperator1 = "-";
+	    var seperator2 = ":";
+	    var month = date.getMonth() + 1;
+	    var strDate = date.getDate();
+	    if (month >= 1 && month <= 9) {
+		        month = "0" + month;
+	    }
+	    if (strDate >= 0 && strDate <= 9) {
+		        strDate = "0" + strDate;
+	    }
+	    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+	            + " " + date.getHours() + seperator2 + date.getMinutes()
+	            + seperator2 + date.getSeconds();
+	    return currentdate;
 } 
