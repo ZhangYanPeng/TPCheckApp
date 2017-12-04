@@ -42,11 +42,6 @@ function validateInfo(usr,psd){
 		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		error : function(e,status) {
-			myApp.alert("登陆失败，请重试","抱歉");
-			account = null;
-			storeUserIdentification(account);
-			mainView.router.loadPage("function.html");//页面跳转
-			myApp.loginScreen();
 		},
 		success : function(data) {
 			if(data.id == -1){
