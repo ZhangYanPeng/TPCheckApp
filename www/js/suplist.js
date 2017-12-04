@@ -7,6 +7,7 @@ function loadAllDevs(aid){
 		url : baseUrl + 'loadAllDevs',
 		data : {id:aid},
 		dataType : "json",
+		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		error : function(e,status) {
 			myApp.alert("获取信息失败，请重试","抱歉");
@@ -23,6 +24,7 @@ function loadAllDevs(aid){
 					url : baseUrl + 'loadAllSubDevs',
 					data : {id:value.id},
 					dataType : "json",
+					timeout: 1000,
 					contentType : "application/x-www-form-urlencoded; charset=utf-8",
 					error : function(e,status) {
 						myApp.alert("获取信息失败，请重试","抱歉");

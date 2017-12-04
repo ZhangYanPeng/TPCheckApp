@@ -8,6 +8,7 @@ function login(){
 		data : {username : $$('#username').val(),
 			password : $$('#password').val()},
 		dataType : "json",
+		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		error : function(e,status) {
 			myApp.alert("登陆失败，请重试","抱歉");
@@ -38,6 +39,7 @@ function validateInfo(usr,psd){
 		data : {username : usr,
 			password : psd},
 		dataType : "json",
+		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		error : function(e,status) {
 			myApp.alert("登陆失败，请重试","抱歉");

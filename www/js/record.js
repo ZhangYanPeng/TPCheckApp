@@ -7,6 +7,7 @@ function initRecord(did){
 		url : baseUrl + 'loadCheckItem',
 		data :  { id: did},
 		dataType : "json",
+		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		error : function(e,status) {
 			alert("err");
@@ -170,7 +171,7 @@ function saveRecord(){
 	if(upload_enable == 1){
 		uploadAllRecords();
 		if(check_type != "")
-			startCheck(check_type);
+			mainView.router.loadPage('plan.html');
 		else
 			mainView.router.loadPage('function.html');
 	}
@@ -222,11 +223,14 @@ function uploadRecord(record){
 };
 
 function uploadPic(pic){
+	var us = -1;
 	window.resolveLocalFileSystemURL(pic, function (fileEntry) {  
 		var fileURL = fileEntry.toURL();
 		var success = function (r) {
+			us = 1;
 		}
 		var fail = function (error) {
+			us = 0;
 		}
 		var options = new FileUploadOptions();
 		options.fileKey = "file";

@@ -26,6 +26,7 @@ function modify(){
 		url : baseUrl + 'modifyPassword',
 		data :  { id : account.id, pwd : $$("#new-pwd").val()},
 		dataType : "json",
+		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		error : function(e,status) {
 			myApp.alert("加载失败，请重试","抱歉");
@@ -36,4 +37,10 @@ function modify(){
     		mainView.router.loadPage('me.html');
 		}
 	});
+}
+
+function logout(){
+	account = null;
+	storeUserIdentification(account);
+	myApp.alert("密码修改成功！","提示");
 }

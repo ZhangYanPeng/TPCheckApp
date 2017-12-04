@@ -11,7 +11,8 @@ function showFavorite(){
 		var pic = $$("<p></p>");
 		$$.each(value.pictures,function(ind,val){
 			var img = $$("<img></img>").attr('src',val).attr('width','50em');
-			var a_img = $$("<a></a>").attr('href',"picture.html?pic="+val).append(img);
+			console.log('javascript:showPic('+val+');');
+			var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+val+"');").append(img);
 			pic.append(a_img);
 		});
 
@@ -44,9 +45,12 @@ function addFavRec(recid){
 		data :  { rid: recid},
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
-		error : function(e,status) {
+		timeout: 1000,
+		error : function(e,status) {\
+			myApp.alert("加载超时","抱歉");
 		},
 		success : function(data) {
+			console.log(data.pictures.length);
 			var pics = new Array();
 			$$.each(data.pictures,function(index,value){
 				var fileTransfer = new FileTransfer();
@@ -77,13 +81,9 @@ function addFavRec(recid){
 			record.record = data.record;
 			record.cides = data.deviceCheckItem;
 			record.pictures = pics;
-			if(favorite == null){
-				favorite = new Array();
-			}else{
-			}
 			favorite.push(record);
 			storeRecord();
-			myApp.alert("收藏成功","通知");
+			myApp.alert("搜藏成功","通知");
 		}
 	});
 }
