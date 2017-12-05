@@ -44,6 +44,7 @@ function setPlan(type){
 			url : baseUrl + 'loadSupDevices',
 			data : {id : account.id},
 			dataType : "json",
+			timeout: 1000,
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
 			error : function(e,status) {
 				myApp.alert("加载失败，请重试","抱歉");

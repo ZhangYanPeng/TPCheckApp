@@ -12,7 +12,7 @@ function showRecords(){
 			var pic = $$("<p></p>");
 			$$.each(value.pictures,function(ind,val){
 				var img = $$("<img></img>").attr('src',val).attr('width','50em');
-				var a_img = $$("<a></a>").attr('href',"picture.html?pic="+val).append(img);
+				var a_img = $$("<a></a>").attr('href',"javascript:showPic("+val+");").append(img);
 				pic.append(a_img);
 			});
 			var a_d = $$("<a></a>").attr('href','information.html?id='+value.device).append("查看设备详情");
@@ -24,8 +24,4 @@ function showRecords(){
 		}
 	});
 	$$(".rlist").append(ul);
-}
-
-function showPic(val){
-	$$("#pic").attr('src',val);
 }
