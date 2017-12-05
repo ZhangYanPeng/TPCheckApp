@@ -112,7 +112,6 @@ function getNowFormatDate() {
 } 
 
 function showPic(val){
-	console.log("showPic");
 	var myPhotoBrowser = myApp.photoBrowser({
     zoom: true,
     photos: [val]

@@ -161,7 +161,7 @@ function loadDeviceInfo(did,content){
 	});
 }
 
-function loadLocalDeviceInfo(did){
+function loadLocalDeviceInfo(did,content){
 	var c_dev = null;
 	$$.each(devices,function(index,value){
 		var tmp = new Array();

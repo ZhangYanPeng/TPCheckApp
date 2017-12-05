@@ -13,12 +13,15 @@ $$(document).on('pageInit', function (e) {
     var page = e.detail.page;
 
     if (page.name === 'function') {
+            console.log("**********");
         // Following code will be executed for page with data-page attribute equal to "index"
         getUserIdentification();
         if( account == null || account.id == -1){
             myApp.loginScreen();
         }else{
+            console.log("**********");
             validateInfo(account.username,account.password);
+            console.log("*load end*");
             authority = account.authority;
             if(authority>0){
                 $$('.fun_title').html("支吊架掌中宝（企业版）");

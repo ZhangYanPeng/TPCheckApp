@@ -30,6 +30,9 @@
         },
         "cordova-plugin-android-permissions": {
             "PACKAGE_NAME": "com.tpcheck.tpri"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.tpcheck.tpri"
         }
     },
     "dependent_plugins": {
