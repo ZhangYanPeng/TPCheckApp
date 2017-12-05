@@ -37,7 +37,6 @@ function start(){
     mainView.router.loadPage("function.html");//页面跳转
 }
 
-myApp.alert("init");
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     window.setTimeout("start()",1000);//1秒后跳转

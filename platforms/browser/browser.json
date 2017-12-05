@@ -14,7 +14,7 @@
                         },
                         {
                             "xml": "<feature name=\"BarcodeScanner\"><param name=\"browser-package\" value=\"BarcodeScanner\" /></feature>",
-                            "count": 9
+                            "count": 1
                         }
                     ]
                 }
@@ -311,118 +311,6 @@
             "clobbers": [
                 "cordova.plugins.barcodeScanner"
             ]
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "clobbers": [
-                "cordova.plugins.barcodeScanner"
-            ]
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "runs": true
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "clobbers": [
-                "cordova.plugins.barcodeScanner"
-            ]
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "runs": true
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "clobbers": [
-                "cordova.plugins.barcodeScanner"
-            ]
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "runs": true
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "clobbers": [
-                "cordova.plugins.barcodeScanner"
-            ]
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "runs": true
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "clobbers": [
-                "cordova.plugins.barcodeScanner"
-            ]
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "runs": true
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "clobbers": [
-                "cordova.plugins.barcodeScanner"
-            ]
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "runs": true
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "clobbers": [
-                "cordova.plugins.barcodeScanner"
-            ]
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "runs": true
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "clobbers": [
-                "cordova.plugins.barcodeScanner"
-            ]
-        },
-        {
-            "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
-            "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
-            "pluginId": "phonegap-plugin-barcodescanner",
-            "runs": true
         },
         {
             "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",

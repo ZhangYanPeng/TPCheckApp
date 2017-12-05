@@ -39,8 +39,8 @@ function validateInfo(usr,psd){
 		data : {username : usr,
 			password : psd},
 		dataType : "json",
-		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
+		timeout: 1000,
 		error : function(e,status) {
 		},
 		success : function(data) {

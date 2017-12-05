@@ -1,6 +1,6 @@
 function loadLastBlog(){
 	$$.ajax({
-		async : false,
+		async : true,
 		cache : false,
 		type : 'GET',
 		crossDomain : true,
@@ -10,7 +10,7 @@ function loadLastBlog(){
 		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		error : function(e,status) {
-			myApp.alert("获取信息失败，请重试","抱歉");
+			$$("#lastblog").hide();
 		},
 		success : function(data) {
 			if(data.length == 0 || data == null){
@@ -64,16 +64,17 @@ Date.prototype.Format = function (fmt) {
 }
 
 function loadAllBlog(){
+	console.log("load message");
 	$$.ajax({
-		async : false,
+		async : true,
 		cache : false,
 		type : 'GET',
 		crossDomain : true,
 		url : baseUrl + 'getLastBlog',
 		data : {n : blog_size},
 		dataType : "json",
-		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
+		timeout: 1000,
 		error : function(e,status) {
 			myApp.alert("获取信息失败，请重试","抱歉");
 		},

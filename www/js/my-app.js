@@ -19,9 +19,7 @@ $$(document).on('pageInit', function (e) {
         if( account == null || account.id == -1){
             myApp.loginScreen();
         }else{
-            console.log("**********");
             validateInfo(account.username,account.password);
-            console.log("*load end*");
             authority = account.authority;
             if(authority>0){
                 $$('.fun_title').html("支吊架掌中宝（企业版）");
@@ -33,6 +31,7 @@ $$(document).on('pageInit', function (e) {
     }
 
     if (page.name === 'tpcheck') {
+        return;
     }
 
     if (page.name === 'information') {
