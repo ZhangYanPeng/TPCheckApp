@@ -213,6 +213,7 @@ function uploadRecord(record){
 			ciid : record.ci})},
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
+		timeout: 1000,
 		error : function(e,status) {
 			console.log(e);
 			alert("err");
@@ -277,6 +278,7 @@ function delRec(recid,accid){
 		data :  { rid: recid , aid : accid},
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
+		timeout: 1000,
 		error : function(e,status) {
 		},
 		success : function(data) {

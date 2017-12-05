@@ -1,8 +1,10 @@
 function loadAccountInfo(){
 	$$(".info-username").html(account.username);
-	$$(".info-company").html(account.department.company.name);
-	$$(".info-department").html(account.department.name);
-	$$(".info-position").html(account.position);
+	$$(".info-company").html(account.company.name);
+	if(account.position == 1)
+		$$(".info-position").html("管理员");
+	else
+		$$(".info-position").html("工作人员");
 }
 
 function modify(){
