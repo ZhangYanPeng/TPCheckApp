@@ -54,7 +54,7 @@ function addFavRec(recid){
 			var pics = new Array();
 			$$.each(data.pictures,function(index,value){
 				var fileTransfer = new FileTransfer();
-				var uri = encodeURI(severUrl+value);
+				var uri = encodeURI(serverUrl+value);
 				var fileURL = cordova.file.dataDirectory+"favorite"+data.id+"-"+index+'.jpg';
 				fileTransfer.download(
 					uri,

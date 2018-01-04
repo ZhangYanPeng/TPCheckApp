@@ -1,7 +1,17 @@
 // Initialize app
 var myApp = new Framework7();
-var severUrl = "http://10.220.118.19:8080/";
-var baseUrl = severUrl+"TPCheck/app/";
+var serverIp = "10.220.118.19";
+var serverUrl = "http://"+serverIp+":8080/";
+var baseUrl = serverUrl+"tpri/app/";
+
+function setIp(ip){
+	var storage = window.localStorage;
+	serverIp = ip;
+	serverUrl = "http://"+serverIp+":8080/";
+	baseUrl = serverUrl+"tpri/app/";
+	storage["ip"] = serverIp;
+}
+
 var account;
 var authority;
 
@@ -51,10 +61,12 @@ function storeUserIdentification(userinfo) {
 function getUserIdentification() {
 	var storage = window.localStorage;
 	var info = storage["account"];
-	if( info!=null && info!="" )
+	if( info!=null && info!='null' && info!="" ){
 		account = JSON.parse(info);
-	else
+	}
+	else{
 		account = null;
+	}
 }
 
 function getSetting(){
@@ -94,27 +106,27 @@ function storeRecord(){
 }
 
 function getNowFormatDate() {
-    var date = new Date();
-    var seperator1 = "-";
-    var seperator2 = ":";
-    var month = date.getMonth() + 1;
-    var strDate = date.getDate();
-    if (month >= 1 && month <= 9) {
-        month = "0" + month;
-    }
-    if (strDate >= 0 && strDate <= 9) {
-        strDate = "0" + strDate;
-    }
-    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-            + " " + date.getHours() + seperator2 + date.getMinutes()
-            + seperator2 + date.getSeconds();
-    return currentdate;
+	    var date = new Date();
+	    var seperator1 = "-";
+	    var seperator2 = ":";
+	    var month = date.getMonth() + 1;
+	    var strDate = date.getDate();
+	    if (month >= 1 && month <= 9) {
+		        month = "0" + month;
+	    }
+	    if (strDate >= 0 && strDate <= 9) {
+		        strDate = "0" + strDate;
+	    }
+	    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+	            + " " + date.getHours() + seperator2 + date.getMinutes()
+	            + seperator2 + date.getSeconds();
+	    return currentdate;
 } 
 
 function showPic(val){
 	var myPhotoBrowser = myApp.photoBrowser({
-    zoom: true,
-    photos: [val]
+		zoom: true,
+		photos: [val]
 	});   
 	myPhotoBrowser.open(); // open photo browser
 }

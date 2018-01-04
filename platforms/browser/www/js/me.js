@@ -44,5 +44,9 @@ function modify(){
 function logout(){
 	account = null;
 	storeUserIdentification(account);
-	myApp.alert("密码修改成功！","提示");
+	mainView.router.loadPage("function.html");//页面跳转
+	if(storage["ip"]!=null && storage["ip"]!="")
+        setIp(storage["ip"]);
+    $$("#ip").val(serverIp);
+	myApp.loginScreen();
 }

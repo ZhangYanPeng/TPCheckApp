@@ -21,6 +21,11 @@ function login(){
 				}else{
 					storeUserIdentification(data);
 					account = data;
+					if(account.authority>0){
+		                $$('.fun_title').html("支吊架掌中宝（企业版）");
+		            }else{
+		                $$('.fun_title').html("支吊架掌中宝（轻量版）");
+		            }
 					myApp.closeModal(".login-screen");
 				}
 			}else{
@@ -48,15 +53,13 @@ function validateInfo(usr,psd){
 			if(data.id == -1){
 				alert("您的登录信息已经过期，请重新登录");
 				mainView.router.loadPage("function.html");//页面跳转
+
+            	var storage = window.localStorage;
+				if(storage["ip"]!=null && storage["ip"]!="")
+		            setIp(storage["ip"]);
+		        $$("#ip").val(serverIp);
 				myApp.loginScreen();
 			}
 		}
 	});
-}
-
-function logout(){
-	account = null;
-	storeUserIdentification(account);
-	mainView.router.loadPage("function.html");//页面跳转
-	myApp.loginScreen();
 }

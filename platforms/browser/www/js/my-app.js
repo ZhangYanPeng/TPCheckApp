@@ -11,12 +11,14 @@ myApp.onPageInit('about', function (page) {
 $$(document).on('pageInit', function (e) {
     // Get page data from event data
     var page = e.detail.page;
-
     if (page.name === 'function') {
-            console.log("**********");
         // Following code will be executed for page with data-page attribute equal to "index"
         getUserIdentification();
-        if( account == null || account.id == -1){
+        if( account == null || account == 'null' || account.id == -1){
+            var storage = window.localStorage;
+            if(storage["ip"]!=null && storage["ip"]!="")
+                setIp(storage["ip"]);
+            $$("#ip").val(serverIp);
             myApp.loginScreen();
         }else{
             validateInfo(account.username,account.password);

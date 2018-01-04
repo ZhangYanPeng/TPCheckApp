@@ -150,8 +150,8 @@ function loadDeviceInfo(did,content){
 
 					$$("#devPic").html("");
 					$$.each(data,function(index,value){
-						var img = $$("<img></img>").attr('src',severUrl+value.src).attr('width','100em');
-						var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+severUrl+value.src+"');").append(img);
+						var img = $$("<img></img>").attr('src',serverUrl+value.src).attr('width','100em');
+						var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+serverUrl+value.src+"');").append(img);
 						var li_img = $$("<li></li>").append(a_img).append(value.name);
 						$$("#devPic").append(li_img);
 					});
@@ -235,8 +235,8 @@ function presentDevInfo(device,did,len){
 		var pr = $$("<p></p>").append(value.record);
 		var pic = $$("<p></p>");
 		$$.each(value.pictures,function(ind,val){
-			var img = $$("<img></img>").attr('src',severUrl+val).attr('width','50em');
-			var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+severUrl+value.src+"');").append(img);
+			var img = $$("<img></img>").attr('src',serverUrl+val).attr('width','50em');
+			var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+serverUrl+value.src+"');").append(img);
 			pic.append(a_img);
 		});
 
@@ -312,8 +312,8 @@ function loadSupDeviceInfo(did){
 				success : function(data) {
 					$$("#supDevPic").html("");
 					$$.each(data,function(index,value){
-						var img = $$("<img></img>").attr('src',severUrl+value.src).attr('width','100em');
-						var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+severUrl+value.src+"');").append(img);
+						var img = $$("<img></img>").attr('src',serverUrl+value.src).attr('width','100em');
+						var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+serverUrl+value.src+"');").append(img);
 						var li_img = $$("<li></li>").append(a_img).append(value.name);
 						$$("#supDevPic").append(li_img);
 					});
