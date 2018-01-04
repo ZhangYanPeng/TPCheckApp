@@ -13,9 +13,9 @@ $$(document).on('pageInit', function (e) {
     var page = e.detail.page;
 
     if (page.name === 'function') {
-            console.log("**********");
         // Following code will be executed for page with data-page attribute equal to "index"
         getUserIdentification();
+        $$("#ip").val(serverIp);
         if( account == null || account.id == -1){
             myApp.loginScreen();
         }else{

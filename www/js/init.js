@@ -1,7 +1,18 @@
 // Initialize app
 var myApp = new Framework7();
-var severUrl = "http://10.220.118.19:8080/";
-var baseUrl = severUrl+"TPCheck/app/";
+var serverIp = "10.220.118.19";
+
+if(storage["ip"] != null && storage["ip"] != ""){
+	setIp(storage["ip"]);
+}
+
+functino setIp(ip){
+	serverIp = ip;
+	serverUrl = "http://"+serverIp+":8080/";
+	baseUrl = serverUrl+"TPCheck/app/";
+	storage["ip"] = serverIp;
+}
+
 var account;
 var authority;
 
@@ -51,6 +62,9 @@ function storeUserIdentification(userinfo) {
 function getUserIdentification() {
 	var storage = window.localStorage;
 	var info = storage["account"];
+	serverIp = storage["ip"];
+	serverUrl = "http://"+serverIp+"/";
+	baseUrl = serverUrl+"TPCheck/app/";
 	if( info!=null && info!="" )
 		account = JSON.parse(info);
 	else

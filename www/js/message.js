@@ -35,7 +35,7 @@ function loadLastBlog(){
 					},
 					success : function(dat) {
 						if(dat!=null)
-							$$("#blog-title").attr('style',"background-image:url("+severUrl+dat.src+")" );
+							$$("#blog-title").attr('style',"background-image:url("+serverUrl+dat.src+")" );
 					}
 				});
 			}
@@ -102,7 +102,7 @@ function loadAllBlog(){
 						},
 						success : function(dat) {
 							if(dat!=null)
-								div_card_header.attr('style',"background-image:url("+severUrl+dat.src+")" );
+								div_card_header.attr('style',"background-image:url("+serverUrl+dat.src+")" );
 						}
 					});
 					var div_card = $$("<div></div>").attr("class","card demo-card-header-pic").append(div_card_header).append(div_card_content).append(div_card_footer);
