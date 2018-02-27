@@ -215,7 +215,6 @@ function uploadRecord(record){
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		timeout: 1000,
 		error : function(e,status) {
-			console.log(e);
 			alert("err");
 		},
 		success : function(data) {

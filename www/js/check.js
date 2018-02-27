@@ -288,7 +288,7 @@ function loadSupDeviceInfo(did){
 		type : 'GET',
 		crossDomain : true,
 		url : baseUrl + 'loadDeviceInfo',
-		data :  { id: did},
+		data :  { aid : account.id ,id: did},
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		timeout: 1000,

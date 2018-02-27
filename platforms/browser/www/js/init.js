@@ -1,14 +1,24 @@
 // Initialize app
 var myApp = new Framework7();
-var serverIp = "10.220.118.19";
+var serverIp = "";
+initIp();
+function initIp(){
+	var storage = window.localStorage;
+	var ip = storage["ip"];
+	if(ip == null || ip == ""){
+		serverIp = "";
+	}else{
+		serverIp = ip;
+	}
+}
 var serverUrl = "http://"+serverIp+":8080/";
-var baseUrl = serverUrl+"tpri/app/";
+var baseUrl = serverUrl+"TPCheck/app/";
 
 function setIp(ip){
 	var storage = window.localStorage;
 	serverIp = ip;
 	serverUrl = "http://"+serverIp+":8080/";
-	baseUrl = serverUrl+"tpri/app/";
+	baseUrl = serverUrl+"TPCheck/app/";
 	storage["ip"] = serverIp;
 }
 
