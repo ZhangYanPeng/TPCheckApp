@@ -236,7 +236,7 @@ function presentDevInfo(device,did,len){
 		var pic = $$("<p></p>");
 		$$.each(value.pictures,function(ind,val){
 			var img = $$("<img></img>").attr('src',serverUrl+val).attr('width','50em');
-			var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+serverUrl+val.src+"');").append(img);
+			var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+serverUrl+val+"');").append(img);
 			pic.append(a_img);
 		});
 
