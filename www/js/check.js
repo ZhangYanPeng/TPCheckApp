@@ -236,17 +236,19 @@ function presentDevInfo(device,did,len){
 		var pic = $$("<p></p>");
 		$$.each(value.pictures,function(ind,val){
 			var img = $$("<img></img>").attr('src',serverUrl+val).attr('width','50em');
-			var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+serverUrl+value.src+"');").append(img);
+			var a_img = $$("<a></a>").attr('href',"javascript:showPic('"+serverUrl+val.src+"');").append(img);
 			pic.append(a_img);
 		});
 
 		var a_fav = $$("<a></a>").attr('href',"javascript:addFavRec("+value.id+");").append("加入收藏");
 		var div_title = $$("<div></div>").attr('class','item-title');
+
 		if(isFav(value.id)==0){
 			div_title.append(a_fav);
 		}else{
 			div_title.append("已收藏");
 		}
+
 		var a_del = $$("<a></a>").attr('href',"javascript:delRec("+value.id+","+account.id+");").append("删除");
 		var div_after = $$("<div></div>").attr('class','item-after').append(a_del);
 		var div_inner = $$("<div></div>").attr('class','item-inner').append(div_title).append(div_after);
