@@ -12,13 +12,13 @@ function initIp(){
 	}
 }
 var serverUrl = "http://"+serverIp+":8080/";
-var baseUrl = serverUrl+"TPCheck/app/";
+var baseUrl = serverUrl+"tpri/app/";
 
 function setIp(ip){
 	var storage = window.localStorage;
 	serverIp = ip;
 	serverUrl = "http://"+serverIp+":8080/";
-	baseUrl = serverUrl+"TPCheck/app/";
+	baseUrl = serverUrl+"tpri/app/";
 	storage["ip"] = serverIp;
 }
 

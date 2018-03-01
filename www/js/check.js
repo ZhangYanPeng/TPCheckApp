@@ -231,8 +231,11 @@ function presentDevInfo(device,did,len){
 		var div_dat = $$("<div></div>").attr('class','item-title').append(value.date);
 		var div_inn = $$("<div></div>").attr('class','item-inner').append(div_dat);
 		var a = $$("<a></a>").attr('href',"#").attr('class','item-content item-link').append(div_inn);
-		var pc= $$("<p></p>").append(value.deviceCheckItem);
-		var pr = $$("<p></p>").append(value.record);
+		var pr = $$("<p></p>");
+		var cr = value.record.split('||');
+		$$.each(cr, function(ind,val){
+			pr.append(val).append('<br>');
+		});
 		var pic = $$("<p></p>");
 		$$.each(value.pictures,function(ind,val){
 			var img = $$("<img></img>").attr('src',serverUrl+val).attr('width','50em');
@@ -248,12 +251,10 @@ function presentDevInfo(device,did,len){
 		}else{
 			div_title.append("已收藏");
 		}
-
 		var a_del = $$("<a></a>").attr('href',"javascript:delRec("+value.id+","+account.id+");").append("删除");
 		var div_after = $$("<div></div>").attr('class','item-after').append(a_del);
 		var div_inner = $$("<div></div>").attr('class','item-inner').append(div_title).append(div_after);
-
-		var div_blo = $$("<div></div>").attr('class','content-block').append(pc).append(pr).append(pic).append(div_inner);
+		var div_blo = $$("<div></div>").attr('class','content-block').append(pr).append(pic).append(div_inner);
 		var div_con = $$("<div></div>").attr('class','accordion-item-content').append(div_blo);
 		var li = $$("<li></li>").attr('class','accordion-item').append(a).append(div_con);
 		ul.append(li);
