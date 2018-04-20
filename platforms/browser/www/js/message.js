@@ -64,7 +64,6 @@ Date.prototype.Format = function (fmt) {
 }
 
 function loadAllBlog(){
-	console.log("load message");
 	$$.ajax({
 		async : true,
 		cache : false,
