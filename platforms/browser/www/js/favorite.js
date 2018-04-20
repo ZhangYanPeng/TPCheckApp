@@ -2,13 +2,17 @@ function showFavorite(){
 	$$(".favlist").html("");
 	var ul = $$("<ul></ul>");
 	$$.each(favorite,function(index,value){
+		
 		var div_ti = $$("<div></div>").attr('class','item-title').append(value.date);
 		var div_inn = $$("<div></div>").attr('class','item-inner').append(div_ti);
 		var a = $$("<a></a>").attr('href',"#").attr('class','item-content item-link').append(div_inn);
 
-		var pc= $$("<p></p>").append(value.cides);
+		var pc= $$("<p></p>");
+		if(value.cides != null )
+			pc= $$("<p></p>").append(value.cides);
 		var pr = $$("<p></p>").append(value.record);
 		var pic = $$("<p></p>");
+
 		$$.each(value.pictures,function(ind,val){
 			var img = $$("<img></img>").attr('src',val).attr('width','50em');
 			console.log('javascript:showPic('+val+');');
@@ -20,8 +24,8 @@ function showFavorite(){
 		var title = $$("<div></div>").attr('class','item-title').append(a_d);
 		var a_f = $$("<a></a>").attr('href','javascript:removeFavRec('+value.id+');').append("取消收藏");
 		var content = $$("<div></div>").attr('class','item-after').append(a_f);
-		var item = $$("<div></div>").attr('class','item-inner').append(title).append(content);
 
+		var item = $$("<div></div>").attr('class','item-inner').append(title).append(content);
 		var div_blo = $$("<div></div>").attr('class','content-block').append(pc).append(pr).append(pic).append(item);
 		var div_con = $$("<div></div>").attr('class','accordion-item-content').append(div_blo);
 		var li = $$("<li></li>").attr('class','accordion-item').append(a).append(div_con);
