@@ -7,8 +7,11 @@ function showRecords(){
 			var div_inn = $$("<div></div>").attr('class','item-inner').append(div_ti);
 			var a = $$("<a></a>").attr('href',"#").attr('class','item-content item-link').append(div_inn);
 
-			var pc= $$("<p></p>").append(value.cides);
-			var pr = $$("<p></p>").append(value.record);
+			var pr = $$("<p></p>");
+			var cr = value.record.split('||');
+			$$.each(cr, function(ind,val){
+				pr.append(val).append('<br>');
+			});
 			var pic = $$("<p></p>");
 			$$.each(value.pictures,function(ind,val){
 				var img = $$("<img></img>").attr('src',val).attr('width','50em');
@@ -16,7 +19,7 @@ function showRecords(){
 				pic.append(a_img);
 			});
 			var a_d = $$("<a></a>").attr('href','information.html?id='+value.device).append("查看设备详情");
-			var div_blo = $$("<div></div>").attr('class','content-block').append(pc).append(pr).append(pic).append(a_d);
+			var div_blo = $$("<div></div>").attr('class','content-block').append(pr).append(pic).append(a_d);
 			var div_con = $$("<div></div>").attr('class','accordion-item-content').append(div_blo);
 			var li = $$("<li></li>").attr('class','accordion-item').append(a).append(div_con);
 			$$(".rlist").append(li);

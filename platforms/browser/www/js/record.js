@@ -10,7 +10,6 @@ function initRecord(did){
 		timeout: 1000,
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
 		error : function(e,status) {
-			alert("err");
 			loadCheckItem(did);
 		},
 		success : function(data) {
@@ -18,10 +17,10 @@ function initRecord(did){
 			$$("#images").html("");
 			$$("#dev-id").val(did);
 			$$.each(data,function(index,value){
-				var in_it = $$('<input></input>').attr({type : 'radio', id : 'ci-option', name : 'ci-option', value : value.id+"|"+value.description});
-				var d_icon = $$('<div></div>').attr('class','item-media').append($$('<i></i>').attr('class','icon icon-form-radio'));
+				var in_it = $$('<input></input>').attr({class : 'ci-option', type : 'checkbox', name : 'ci-option', value : value.description});
+				var d_icon = $$('<div></div>').attr('class','item-media').append($$('<i></i>').attr('class','icon icon-form-checkbox'));
 				var d_con = $$('<div></div>').attr('class','item-inner').append($$('<div></div>').attr('class','item-title').append(value.description));
-				var la = $$('<label></label>').attr('class','label-radio item-content').append(in_it).append(d_icon).append(d_con);
+				var la = $$('<label></label>').attr('class','label-checkbox item-content').append(in_it).append(d_icon).append(d_con);
 				var li = $$('<li></li>').append(la);
 				$$(".check-item").append(li);
 			});
@@ -44,7 +43,6 @@ function openCamera(selection) {
 
     }, function cameraError(error) {
     	console.log("Unable to obtain picture: " + error, "app");
-
     }, options);
 }
 
@@ -153,9 +151,13 @@ function saveRecord(){
 	record.account = JSON.stringify(account);
 	record.device = $$("#dev-id").val();
 	record.date = getNowFormatDate();
-	record.record = $$("#record").val();
-	record.ci = $$("#ci-option").val().split("|")[0];
-	record.cides = $$("#ci-option").val().split("|")[1];
+	record.record = "";
+	console.log($$(".ci-option"));
+	$$.each($$(".ci-option"),function(index,value){
+		if(value.checked)
+			record.record = record.record + value.value + "||";
+	});
+	record.record = record.record + $$("#record").val();
 	record.pictures = pics;
 	record.picStr = picStr;
 	record.upload = 0;
