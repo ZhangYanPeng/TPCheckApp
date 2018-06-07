@@ -26,6 +26,11 @@ function login(){
 		            }else{
 		                $$('.fun_title').html("支吊架掌中宝（轻量版）");
 		            }
+		            if(account.company.id == 0){
+		                $$("#admin-que").attr("style","");
+		            }else{
+		                $$("#common-que").attr("style","");
+		            }
 					myApp.closeModal(".login-screen");
 				}
 			}else{

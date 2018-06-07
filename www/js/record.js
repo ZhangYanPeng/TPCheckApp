@@ -152,7 +152,6 @@ function saveRecord(){
 	record.device = $$("#dev-id").val();
 	record.date = getNowFormatDate();
 	record.record = "";
-	console.log($$(".ci-option"));
 	$$.each($$(".ci-option"),function(index,value){
 		if(value.checked)
 			record.record = record.record + value.value + "||";

@@ -231,11 +231,16 @@ function presentDevInfo(device,did,len){
 		var div_dat = $$("<div></div>").attr('class','item-title').append(value.date);
 		var div_inn = $$("<div></div>").attr('class','item-inner').append(div_dat);
 		var a = $$("<a></a>").attr('href',"#").attr('class','item-content item-link').append(div_inn);
-		var pr = $$("<p></p>");
+		var checkinfo = FormatList(value.date+"--"+device.department);
+		var location = FormatList(device.location);
+		var lbul = $$("<ul></ul>").append(checkinfo).append(location);
+
 		var cr = value.record.split('||');
 		$$.each(cr, function(ind,val){
-			pr.append(val).append('<br>');
+			lbul.append(FormatList("问题："+val));
 		});
+		var lb = $$("<div></div>").attr('class','list-block').append(lbul);
+		var pr = $$("<p></p>").append(lb);
 		var pic = $$("<p></p>");
 		$$.each(value.pictures,function(ind,val){
 			var img = $$("<img></img>").attr('src',serverUrl+val).attr('width','50em');
@@ -260,6 +265,14 @@ function presentDevInfo(device,did,len){
 		ul.append(li);
 	});
 	$$(".reclist").append(ul);
+}
+
+function FormatList(str){
+	var title = $$("<div></div>").attr('class','item-title').append(str);
+	var inner = $$("<div></div>").attr('class','item-inner').append(title);
+	var content = $$("<div></div>").attr('class','item-content').append(inner);
+	var li = $$("<li></li>").append(content);
+	return li;
 }
 
 function completeCheck(did){

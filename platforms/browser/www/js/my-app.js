@@ -14,6 +14,8 @@ $$(document).on('pageInit', function (e) {
     if (page.name === 'function') {
         // Following code will be executed for page with data-page attribute equal to "index"
         getUserIdentification();
+        $$("#common-que").attr("style","display:none;");
+        $$("#admin-que").attr("style","display:none;");
         if( account == null || account == 'null' || account.id == -1){
             var storage = window.localStorage;
             if(storage["ip"]!=null && storage["ip"]!="")
@@ -21,12 +23,17 @@ $$(document).on('pageInit', function (e) {
             $$("#ip").val(serverIp);
             myApp.loginScreen();
         }else{
+            if(account.company.id == 0){
+                $$("#admin-que").attr("style","");
+            }else{
+                $$("#common-que").attr("style","");
+            }
             validateInfo(account.username,account.password);
             authority = account.authority;
             if(authority>0){
-                $$('.fun_title').html("支吊架掌中宝（企业版）");
+                $$('.fun_title').html("压力管道安全管理（企业版）");
             }else{
-                $$('.fun_title').html("支吊架掌中宝（轻量版）");
+                $$('.fun_title').html("压力管道安全管理（轻量版）");
             }
         }
         loadLastBlog();
@@ -57,7 +64,11 @@ $$(document).on('pageInit', function (e) {
     }
 
     if (page.name === 'reclist') {
-        showRecords();
+        showRecords(page.query.type);
+    }
+
+    if (page.name === 'qlist') {
+        showQues();
     }
 
     if (page.name === 'favorite') {
