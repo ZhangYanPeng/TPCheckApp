@@ -176,6 +176,10 @@ function saveRecord(){
 		else
 			mainView.router.loadPage('function.html');
 	}
+	if(check_type != "")
+		mainView.router.loadPage('plan.html');
+	else
+		mainView.router.loadPage('function.html');
 }
 
 function uploadAllRecords(){

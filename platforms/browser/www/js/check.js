@@ -23,7 +23,7 @@ function loadDevice() {
 		data :  { devices : JSON.stringify(pc), type : check_type},
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
-		timeout: 1000,
+		timeout: 10000,
 		error : function(e,status) {
 			myApp.alert("加载失败，请重试","抱歉");
 		},
@@ -116,7 +116,7 @@ function loadDeviceInfo(did,content){
 		data :  { aid : account.id ,id: did},
 		dataType : "json",
 		contentType : "application/x-www-form-urlencoded; charset=utf-8",
-		timeout: 1000,
+		timeout: 5000,
 		error : function(e,status) {
 			loadLocalDeviceInfo(did,content);
 			$$("#devPic").html("");
