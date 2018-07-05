@@ -6,7 +6,7 @@ function initIp(){
 	var storage = window.localStorage;
 	var ip = storage["ip"];
 	if(ip == null || ip == ""){
-		serverIp = "";
+		serverIp = "47.93.23.162";
 	}else{
 		serverIp = ip;
 	}
