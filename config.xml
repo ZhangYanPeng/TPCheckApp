@@ -8,11 +8,11 @@
         Apache Cordova Team
     </author>
 
-	<icon src="res/logo.png" />
+	<icon src="www/res/logo.png" />
     
-    <icon gap:platform="ios" height="76" src="res/logo76.png" width="76" />
-    <icon gap:platform="ios" height="120" src="res/logo.png" width="120" />
-    <icon gap:platform="ios" height="152" src="res/logo152.png" width="152" />
+    <icon gap:platform="ios" height="76" src="www/res/logo76.png" width="76" />
+    <icon gap:platform="ios" height="120" src="www/res/logo.png" width="120" />
+    <icon gap:platform="ios" height="152" src="www/res/logo152.png" width="152" />
 
     <content src="index.html" />
     <access origin="*" />
