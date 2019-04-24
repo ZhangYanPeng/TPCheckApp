@@ -26,6 +26,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
+        <icon height="40" src="www/res/logo40.png" width="40" />
         <icon height="76" src="www/res/logo76.png" width="76" />
         <icon height="120" src="www/res/logo.png" width="120" />
         <icon height="152" src="www/res/logo152.png" width="152" />
