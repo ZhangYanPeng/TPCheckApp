@@ -15,6 +15,7 @@ var serverUrl = "http://"+serverIp+":8080/";
 var baseUrl = serverUrl+"TPCheck/app/";
 
 function setIp(ip){
+	ip = "47.93.23.162";
 	var storage = window.localStorage;
 	serverIp = ip;
 	serverUrl = "http://"+serverIp+":8080/";

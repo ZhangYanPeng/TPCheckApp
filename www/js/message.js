@@ -31,7 +31,6 @@ function loadLastBlog(){
 					dataType : "json",
 					contentType : "application/x-www-form-urlencoded; charset=utf-8",
 					error : function(e,status) {
-						myApp.alert("获取信息失败，请重试","抱歉");
 					},
 					success : function(dat) {
 						if(dat!=null)

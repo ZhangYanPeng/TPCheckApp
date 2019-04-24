@@ -1,5 +1,6 @@
 function login(){
 	setIp($$('#ip').val());
+	console.log(baseUrl);
 	$$.ajax({
 		async : true,
 		cache : false,
